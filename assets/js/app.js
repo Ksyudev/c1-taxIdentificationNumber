@@ -2,7 +2,20 @@
 
 let tin = prompt ('Введіть ваш ІПН');
    console.log(`Ваш ІПН = ${tin}`);
+   let factor = [-1,5,7,9,4,6,10,5,7];
 
+   let arrtin = [...tin];
+
+   
+   let mult = factor.map((x, i) => { return x * arrtin[i]; });   
+
+   let sum = mult.reduce((a,b)=>a+b);
+
+   let x = sum - (11*(Math.trunc(sum/11)));
+
+   let end = tin.slice(9,10);
+if (x == end) 
+{
    let sex = tin.slice(-2,-1);
    if (sex%2==0)
       {console.log(`стать: жіноча`)}
@@ -36,3 +49,6 @@ let tin = prompt ('Введіть ваш ІПН');
         else
             {console.log (`повних років : ${fullyear} `)}
        }
+}
+else 
+{console.log (`такого ІПН не існує`)}
