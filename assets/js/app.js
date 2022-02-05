@@ -38,17 +38,24 @@ if (x == end)
    let currentyear = currentd.getFullYear();
    let newhbyear = newhb.getFullYear();
    let fullyear = currentyear-newhbyear;
-   if (currentd.getMonth() < newhb.getMonth()) 
 
-      {console.log (`повних років : ${fullyear-1} `)}
-   else if (currentd.getMonth() > newhb.getMonth()) 
-      {console.log (`повних років : ${fullyear} `)}
-   else 
-      { if (currentd.getDate() < newhb.getDate(0))
-            {console.log (`повних років : ${fullyear-1} `)}
-        else
-            {console.log (`повних років : ${fullyear} `)}
-       }
+
+   //if (currentd.getMonth() < newhb.getMonth()) 
+//
+   //   {console.log (`повних років : ${fullyear-1} `)}
+   //else if (currentd.getMonth() > newhb.getMonth()) 
+   //   {console.log (`повних років : ${fullyear} `)}
+   //else 
+   //   { if (currentd.getDate() < newhb.getDate(0))
+   //         {console.log (`повних років : ${fullyear-1} `)}
+   //     else
+   //         {console.log (`повних років : ${fullyear} `)}
+   //    }
+   fullyear = (currentd.getMonth() < newhb.getMonth())||(currentd.getDate() < newhb.getDate(0))? fullyear-1 : fullyear;
+   console.log (`повних років : ${fullyear} `);
+
+
+
 }
 else 
 {console.log (`такого ІПН не існує`)}
