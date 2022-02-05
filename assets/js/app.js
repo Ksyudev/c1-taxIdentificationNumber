@@ -1,11 +1,13 @@
+
+
 let tin = prompt ('Введіть ваш ІПН');
    console.log(`Ваш ІПН = ${tin}`);
 
    let sex = tin.slice(-2,-1);
    if (sex%2==0)
-      {console.log(`стать: жіноча`);}
+      {console.log(`стать: жіноча`)}
    else
-      {console.log(`стать: чоловіча`);};
+      {console.log(`стать: чоловіча`)};
 
    let d = new Date(1900,0,1);
     //console.log(+d);
@@ -19,7 +21,18 @@ let tin = prompt ('Введіть ваш ІПН');
    console.log(`Дата народження:${newhb.getDate()} ${newhb.getMonth()+1} ${newhb.getFullYear()}`);
  
    let currentd = new Date();
-   //console.log(+currentd);
+ 
+   let currentyear = currentd.getFullYear();
+   let newhbyear = newhb.getFullYear();
+   let fullyear = currentyear-newhbyear;
+   if (currentd.getMonth() < newhb.getMonth()) 
 
-   let fullyear = Math.trunc((+currentd -hb)/1000/60/60/24/365);
-   console.log (`повних років : ${fullyear} `);
+      {console.log (`повних років : ${fullyear-1} `)}
+   else if (currentd.getMonth() > newhb.getMonth()) 
+      {console.log (`повних років : ${fullyear} `)}
+   else 
+      { if (currentd.getDate() < newhb.getDate(0))
+            {console.log (`повних років : ${fullyear-1} `)}
+        else
+            {console.log (`повних років : ${fullyear} `)}
+       }
